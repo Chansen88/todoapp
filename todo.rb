@@ -92,7 +92,7 @@ class Todo
 end
 
 
-def userInterface
+class UserInterface
   def prompt
     puts '  Welcome to the todo app, what would you like to do?'
     puts 'n - make a new todo'
@@ -169,4 +169,5 @@ def userInterface
     puts "BYE!!!"
   end
 end
-userInterface.prompt
+ui = UserInterface.new
+ui.prompt
