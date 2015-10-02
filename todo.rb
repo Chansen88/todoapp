@@ -27,9 +27,6 @@ class Todo
   end
 
   def self.update(id, task, done)
-    puts "task: #{task}"
-    puts "done: #{done}"
-    puts "id: #{id}"
     res = @@c.exec_params("UPDATE todos SET task=$1, done=$2 WHERE id=$3", [task, done, id])
   end
 
@@ -41,10 +38,8 @@ class Todo
       id = todo['id']
       task = todo['task']
       done = todo['done']
-
       results << Todo.new({id: id, task: task, done: done})
     end
-
     results
   end
 
